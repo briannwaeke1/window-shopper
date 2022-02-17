@@ -10,12 +10,13 @@ import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
 
 class App extends React.Component {
+	/* unsubscribeFromAuth is initialised as null */
 	unsubscribeFromAuth = null;
 
 	/* 
-	Authenticate user and store in the database.
-	Open messaging system between the app and firebase for changes to auth.
-	*/
+	Adds an observer for changes to the user's sign-in state. the observer is only triggered on sign-in or sign-out.
+	unsubscribeFromAuth is reassigned to the return value of calling auth.onAuthStateChanged() 
+	this method returns another method: firebase.unsubscribe(). */
 	componentDidMount() {
 		const { setCurrentUser } = this.props;
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
@@ -33,9 +34,7 @@ class App extends React.Component {
 		});
 	}
 
-	/* Call the unsubscribe function when the component is about to unmount is the best way to make sure
-	we don't get any memory leaks in our application related to listeners still being open even if the
-	component that cares about the listener is no longer on the page. */
+	/* when unsubscribeFromAuth() is called inside the componentWillUnmount, it now has the value of firebase.unsubscribe(), which executes, closing the session. */
 	componentWillUnmount() {
 		this.unsubscribeFromAuth();
 	}
