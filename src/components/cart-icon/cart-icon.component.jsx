@@ -4,6 +4,7 @@ import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag.svg';
 import { connect } from 'react-redux';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
+import { createStructuredSelector } from 'reselect';
 
 const CartIcon = ({ toggleCartHidden, itemCount }) => (
 	<div className='cart-icon' onClick={toggleCartHidden}>
@@ -12,14 +13,17 @@ const CartIcon = ({ toggleCartHidden, itemCount }) => (
 	</div>
 );
 
+/* 
+mapDispatchToProps is used for dispatching actions to the store. dispatch is a function of the Redux store. You call store.dispatch to dispatch an action. This is the only way to trigger a state change.
+*/
 const mapDispatchToProps = dispatch => ({
 	toggleCartHidden: () => dispatch(toggleCartHidden())
 });
 
-/*  This prevents the component from being re-rendered whenever the state changes, when it is unrelated to the cart items */
+/*  memoize the calculation of itemCount (cart reducer logic), preventing the reducer logic running on every state change regardless of the calculated value of itemCount */
 
-const mapStateToProps = state => ({
-	itemCount: selectCartItemsCount(state)
+const mapStateToProps = createStructuredSelector({
+	itemCount: selectCartItemsCount
 });
 
 
