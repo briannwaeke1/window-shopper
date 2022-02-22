@@ -23,7 +23,8 @@ Firebase
 
 
 ## Deployment
-- Deployed using Heroku create-react-app-buildpack. Automates deployment with the built-in bundler and serves it up via Nginx.
+- This buildpack deploys a React UI as a static web site. The Nginx web server provides optimum performance and security for the runtime.
+- https://github.com/mars/create-react-app-buildpack
 
 ## Demo
 Please see deployed website [here](https://window-shopper-live.herokuapp.com/).
