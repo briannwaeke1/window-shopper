@@ -23,7 +23,7 @@ Firebase
 
 
 ## Deployment / Demo
-- This application is deployed on Heroku. Please check it out here.
+- This application is deployed on Heroku. Please check it out [here](https://window-shopper-live.herokuapp.com/).
 
 
 Testing
