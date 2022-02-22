@@ -22,8 +22,11 @@ Firebase
 - Checkout (Stripe API)
 
 
-## Deployment / Demo
-- This application is deployed on Heroku. Please check it out [here](https://window-shopper-live.herokuapp.com/).
+## Deployment
+- Deployed using Heroku create-react-app-buildpack. Automates deployment with the built-in bundler and serves it up via Nginx.
+
+## Demo
+Please see deployed website [here](https://window-shopper-live.herokuapp.com/).
 
 
 Testing
