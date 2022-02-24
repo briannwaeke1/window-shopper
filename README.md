@@ -1,16 +1,15 @@
 # window-shopper
 
-Description
-
+## Description
 An e-commerce web application. This is a personal project to showcase my ability to build an enterprise level application from scratch completing all tasks in the development lifecycle.
 
 
 ## Tech Stack
-ReactJS
-NodeJS
-Redux, Redux Thunk, and Redux Saga
-SASS
-Firebase
+- ReactJS
+- NodeJS
+- Redux
+- SASS
+- Firebase
 
 ## Main Features
 - Navigation / Header
@@ -30,7 +29,7 @@ Firebase
 Please see deployed website [here](https://window-shopper-live.herokuapp.com/).
 
 
-Testing
+## Testing
 - Unit tests
   - UI Components
 - Integration tests
@@ -41,10 +40,9 @@ Testing
 
 
 ## Future Roadmap
-
-Full product and category search
-Server-side processing of payments using AWS Lambda
-Migrate from SASS to Styled Components
-Migrate from Redux to Hooks and ContextAPI
-Store product data in AWS DynamoDB
-Fetch data using GraphQL and Apollo
+- Full product and category search
+- Server-side processing of payments using AWS Lambda
+- Migrate from SASS to Styled Components
+- Migrate from Redux to Hooks and ContextAPI
+- Store product data in AWS DynamoDB
+- Fetch data using GraphQL and Apollo
