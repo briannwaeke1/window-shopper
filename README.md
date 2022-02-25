@@ -8,7 +8,8 @@ An e-commerce web application. This is a personal project to showcase my ability
 - ReactJS
 - NodeJS
 - Redux
-- SASS
+- ~~SASS~
+-   Converted styling from SASS to Styled-Components
 - Firebase
 
 ## Main Features
