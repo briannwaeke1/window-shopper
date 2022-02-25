@@ -9,6 +9,7 @@ An e-commerce web application. This is a personal project to showcase my ability
 - NodeJS
 - Redux
 - SASS
+  -   Converted styling from SASS to Styled-Components
 - Firebase
 
 ## Main Features
