@@ -4,24 +4,19 @@ import { createStructuredSelector } from 'reselect';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/user.actions';
-import { selectCurrentUser } from "./redux/user/user.selectors";
+import { selectCurrentUser } from './redux/user/user.selectors';
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 import Header from './components/header/header.component';
 import './App.css';
-
 class App extends React.Component {
-	/* unsubscribeFromAuth is initialised as null */
 	unsubscribeFromAuth = null;
 
-	/* 
-	Adds an observer for changes to the user's sign-in state. the observer is only triggered on sign-in or sign-out.
-	unsubscribeFromAuth is reassigned to the return value of calling auth.onAuthStateChanged() 
-	this method returns another method: firebase.unsubscribe(). */
 	componentDidMount() {
 		const { setCurrentUser } = this.props;
+
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
 			if (userAuth) {
 				const userRef = await createUserProfileDocument(userAuth);
@@ -37,7 +32,6 @@ class App extends React.Component {
 		});
 	}
 
-	/* when unsubscribeFromAuth() is called inside the componentWillUnmount, it now has the value of firebase.unsubscribe(), which executes, closing the session. */
 	componentWillUnmount() {
 		this.unsubscribeFromAuth();
 	}
