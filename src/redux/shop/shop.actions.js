@@ -20,8 +20,9 @@ export const fetchCollectionsFailure = errorMessage => ({
 	payload: errorMessage
 });
 
-// asynchronous redux thunk method that fires multiple actions and updates the reducer to handle the asynchronous nature and state of the shop relates API requests
-export const fetchCollectionsStartAsync = () => { // redux thunk only concerned with actions that return non-objects (functions)
+// asynchronous redux thunk method that allows us to dispatch multiple actions to the reducer
+export const fetchCollectionsStartAsync = () => {
+	// redux thunk allows us to dispatch a function, which returns an action object when invoked
 	return dispatch => {
 		const collectionRef = firestore.collection('collections');
 		dispatch(fetchCollectionsStart());
