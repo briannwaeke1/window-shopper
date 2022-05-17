@@ -22,10 +22,6 @@ An e-commerce web application. This is a personal project to showcase my ability
 - Checkout (Stripe API)
 
 
-## Deployment
-- This buildpack deploys a React UI as a static web site. The Nginx web server provides optimum performance and security for the runtime.
-- https://github.com/mars/create-react-app-buildpack
-
 ## Demo
 Please see deployed website [here](https://window-shopper-live.herokuapp.com/).
 
